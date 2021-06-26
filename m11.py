@@ -85,5 +85,40 @@ elif porcentaje_c > 50:
 elif porcentaje_d > 50:
     print('El ganador fue el D!!!')
 else:
-    print('No gano nadie, pasan a segunda ronda los siguientes candidatos:')
+    print('No gano nadie!')
     
+
+candidatos_vector = [candidato_a, candidato_b, candidato_c, candidato_d]
+candidatos_mayores = [candidatos_vector[2], candidatos_vector[3]]
+
+for i in range(1, len(candidatos_vector)):
+    for j in range(0, len(candidatos_vector) - i):
+        if (candidatos_vector[j + 1] < candidatos_vector[j]):
+            aux = candidatos_vector[j]
+            candidatos_vector[j] = candidatos_vector[j+1]
+            candidatos_vector[j+1] = aux
+
+print('Pasan a la siguientes fases los siguientes candidatos:')
+if candidatos_vector[2] == candidato_a:
+    print('Candidato A')
+
+if candidatos_vector[2] == candidato_b:
+    print('Candidato B')
+
+if candidatos_vector[2] == candidato_c:
+    print('Candidato C')
+
+if candidatos_vector[2] == candidato_d:
+    print('Candidato D')
+
+if candidatos_vector[3] == candidato_a:
+    print('Candidato A')
+
+if candidatos_vector[3] == candidato_b:
+    print('Candidato B')
+
+if candidatos_vector[3] == candidato_c:
+    print('Candidato C')
+
+if candidatos_vector[3] == candidato_d:
+    print('Candidato D')
